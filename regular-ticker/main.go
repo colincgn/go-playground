@@ -12,7 +12,7 @@ func main() {
 	interrupt := make(chan os.Signal, 1)
 	signal.Notify(interrupt, os.Interrupt)
 
-	ticker := time.NewTicker(time.Second * 5).C
+	ticker := time.Tick(time.Second * 5)
 
 	for {
 		select {
